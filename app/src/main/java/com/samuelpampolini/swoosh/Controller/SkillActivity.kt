@@ -1,7 +1,8 @@
-package com.samuelpampolini.swoosh
+package com.samuelpampolini.swoosh.Controller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.samuelpampolini.swoosh.Utilities.EXTRA_LEAGUE
+import com.samuelpampolini.swoosh.R
 
 class SkillActivity : BaseActivity() {
     var league = ""
