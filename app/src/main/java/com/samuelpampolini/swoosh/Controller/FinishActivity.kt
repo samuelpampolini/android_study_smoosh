@@ -2,23 +2,21 @@ package com.samuelpampolini.swoosh.Controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.samuelpampolini.swoosh.Model.Player
 import com.samuelpampolini.swoosh.R
-import com.samuelpampolini.swoosh.Utilities.EXTRA_LEAGUE
-import com.samuelpampolini.swoosh.Utilities.EXTRA_SKILL
+import com.samuelpampolini.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_finish.*
 
 class FinishActivity : BaseActivity() {
 
-    var league = ""
-    var skill = ""
+    lateinit var player: Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
 
-        league = intent.getStringExtra(EXTRA_LEAGUE)
-        skill = intent.getStringExtra(EXTRA_SKILL)
+        player = intent.getParcelableExtra(EXTRA_PLAYER)
 
-        searchLeaguesText.text = "Looking for $league $skill league near you..."
+        searchLeaguesText.text = "Looking for ${player.league} ${player.skill} league near you..."
     }
 }
